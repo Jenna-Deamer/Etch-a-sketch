@@ -33,3 +33,19 @@ body {
     flex: 1;
 }
 
+.button-container button{
+    width: 150px;
+    padding: 10px;
+    margin-top: 8px;
+    background-color: #266ca9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s background-color ease;
+}
+
+.button-container button:hover{
+    background-color: #10497b;
+}

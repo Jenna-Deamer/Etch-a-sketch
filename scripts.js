@@ -1,6 +1,7 @@
-// Get container & button from DOM
+// Get container & buttons from DOM
 const container = document.querySelector(".container");
 const sizeButton = document.querySelector("#grid-size-btn").addEventListener("click", getGridSize);
+const clearButton = document.querySelector("#clear-btn").addEventListener("click", clearGrid);
 let size = 16;
 
 function createGrid(size) {
@@ -18,6 +19,11 @@ function createGrid(size) {
     const cell = document.createElement("div");
     // add class
     cell.classList.add("cell");
+    cell.addEventListener('mouseover', () => {
+      // change div background color
+      cell.style.backgroundColor = 'blue'
+    });
+  
     // row.style.width = squareWidth;
     // row.style.height = squareHeight;
     // append cells to columns
@@ -26,7 +32,8 @@ function createGrid(size) {
     // append to container
     container.appendChild(column)
   }
-}
+  
+};
 
 createGrid(size); // Default 16x16 grid
 
@@ -44,11 +51,14 @@ function getGridSize () {
     // create new grid
     createGrid(size);
 
-}
+};
 // set container content empty to avoid creating multiple grids
 function clearGrid (){
     container.textContent = "";
-}
+    createGrid(size);
 
-// Hover effect
+};
+
+
+
 
