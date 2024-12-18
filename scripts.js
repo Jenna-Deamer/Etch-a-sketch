@@ -1,23 +1,26 @@
 // Get container from DOM
 const container = document.querySelector(".container");
-let size = 24;
+let size = 64;
 
 function createGrid(size) {
+    // let squareWidth = 800/size + "px";
+    // let squareHeight = 800/size + "px";
   // create column
   for (let i = 0; i < size; i++) {
     // create div
     const column = document.createElement("div");
     // add class
     column.classList.add("column");
-      // create rows
+      // create cells
   for (let j = 1; j <= size; j++) {
     // create div
-    const row = document.createElement("div");
+    const cell = document.createElement("div");
     // add class
-    row.classList.add("row");
-    row.textContent = (i * size) + j;
+    cell.classList.add("cell");
+    // row.style.width = squareWidth;
+    // row.style.height = squareHeight;
     // append rows to column divs
-    column.appendChild(row);
+    column.appendChild(cell);
   }
     // append to container
     container.appendChild(column)
