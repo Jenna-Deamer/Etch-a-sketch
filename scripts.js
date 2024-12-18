@@ -1,6 +1,7 @@
-// Get container from DOM
+// Get container & button from DOM
 const container = document.querySelector(".container");
-let size = 64;
+const sizeButton = document.querySelector("#grid-size-btn").addEventListener("click", getGridSize);
+let size = 16;
 
 function createGrid(size) {
     // let squareWidth = 800/size + "px";
@@ -19,25 +20,35 @@ function createGrid(size) {
     cell.classList.add("cell");
     // row.style.width = squareWidth;
     // row.style.height = squareHeight;
-    // append rows to column divs
+    // append cells to columns
     column.appendChild(cell);
   }
     // append to container
     container.appendChild(column)
   }
-
-
-
 }
 
-createGrid(size);
+createGrid(size); // Default 16x16 grid
+
+  // on click prompt user for input
+function getGridSize () {
+ let userInput = prompt("Enter a number between 1 & 64");
+ // Keep prompting user until they've entered a valid input
+    while (userInput < 1 || userInput > 64){
+       userInput= prompt("Invalid Number! Enter a number between 1 & 64");
+    }
+    // When valid set size
+        size = userInput;
+    // clear old grid
+    clearGrid();
+    // create new grid
+    createGrid(size);
+
+}
+// set container content empty to avoid creating multiple grids
+function clearGrid (){
+    container.textContent = "";
+}
 
 // Hover effect
 
-// getGridSize
-
-// on click prompt user for input
-
-// check input must be a num > 0 && < 65
-
-// if valid run createGrid function using input as new size
