@@ -1,0 +1,27 @@
+*{
+    padding: unset;
+    margin: unset;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 800px;
+    height: 500px;
+    border: 1px dashed #000000;
+
+}
+
+.container div{
+    width: 16px;
+    height: 16px;
+}
